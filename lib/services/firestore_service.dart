@@ -32,6 +32,17 @@ class FirestoreService {
     await reference.set(data);
   }
 
+  Future<String> addData({
+    @required String collectionPath,
+    @required Map<String, dynamic> data,
+    bool merge = false,
+  }) async {
+    final DocumentReference newDoc =
+        FirebaseFirestore.instance.collection(collectionPath).doc();
+    await newDoc.set(data);
+    return newDoc.id;
+  }
+
   Future<bool> addArrayElement(
       {@required String documentPath,
       @required String arrayName,

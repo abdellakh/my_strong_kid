@@ -34,6 +34,7 @@ dependencies:
   cloud_firestore: "^0.14.4"
   firebase_auth: "^0.18.4"
   provider: ^4.3.2+2
+  async_loader: ^0.1.2
 
 dev_dependencies:
   flutter_test:

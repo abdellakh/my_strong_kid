@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/dataModels/CurrentUser.dart';
 import './Composant61.dart';
 import './SIGNIN.dart';
 import 'package:adobe_xd/page_link.dart';
@@ -8,10 +9,21 @@ import './CreateAccount2.dart';
 import './Welcome.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CreateAccount1 extends StatelessWidget {
+class CreateAccount1 extends StatefulWidget {
   CreateAccount1({
     Key key,
   }) : super(key: key);
+
+  @override
+  _CreateAccount1State createState() => _CreateAccount1State();
+}
+
+class _CreateAccount1State extends State<CreateAccount1> {
+  TextEditingController _fnameController;
+  TextEditingController _lnameController;
+  TextEditingController _addressController;
+  TextEditingController _phoneController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,6 +125,7 @@ class CreateAccount1 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.person_fill),
                     title: TextField(
+                      controller: _fnameController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'FirstName'),
                       style: TextStyle(
@@ -138,6 +151,7 @@ class CreateAccount1 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.person_fill),
                     title: TextField(
+                      controller: _lnameController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Last Name'),
                       style: TextStyle(
@@ -163,6 +177,7 @@ class CreateAccount1 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.location_fill),
                     title: TextField(
+                      controller: _addressController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Adress'),
                       style: TextStyle(
@@ -188,6 +203,7 @@ class CreateAccount1 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.phone_fill),
                     title: TextField(
+                      controller: _phoneController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Phone'),
                       style: TextStyle(
@@ -247,7 +263,13 @@ class CreateAccount1 extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => CreateAccount2(),
+                  pageBuilder: () => CreateAccount2(
+                    user: CurrentUser(
+                        fname: _fnameController.text,
+                        lname: _lnameController.text,
+                        adress: _addressController.text,
+                        phone: _phoneController.text),
+                  ),
                 ),
               ],
               child: SizedBox(

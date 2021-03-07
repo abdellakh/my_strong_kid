@@ -76,4 +76,18 @@ class FirestoreDatabase {
     return await _firestoreService.setData(
         data: child.toMap(), path: FirestorePath.child(child.uid));
   }
+
+  Future<Child> createChild({@required Child child}) async {
+    String newUid = documentIdFromCurrentDate();
+    child.uid = newUid;
+    await _firestoreService.setData(
+        path: FirestorePath.child(newUid), data: child.toMap());
+    return child;
+  }
+
+  Future<CurrentUser> createUser({@required CurrentUser user}) async {
+    user.uid = await _firestoreService.addData(
+        collectionPath: FirestorePath.users(), data: user.toMap());
+    return user;
+  }
 }

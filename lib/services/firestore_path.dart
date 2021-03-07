@@ -8,6 +8,7 @@ class FirestorePath {
   static String children() => 'children/';
   static String child(String uid) => 'children/$uid';
   static String userData(String uid) => 'users/$uid';
+  static String users() => 'users/';
 
   static String clubDetails() => 'club/details';
 }

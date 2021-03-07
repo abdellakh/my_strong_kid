@@ -6,10 +6,19 @@ import 'package:flutter_application_1/providers/authProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_application_1/Parent_Coach.dart';
 
+import 'services/firestore_database.dart';
+
 void main() {
+  //initialize firestore  before using any of firebase services
+  FirestoreDatabase database = FirestoreDatabase();
+  database.initDatabaseAccess();
+
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider<AuthProvider>(
       create: (context) => AuthProvider(),
+    ),
+    Provider<FirestoreDatabase>(
+      create: (context) => FirestoreDatabase(),
     ),
   ], child: MyApp()));
 }

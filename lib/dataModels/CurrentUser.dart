@@ -7,7 +7,8 @@ import 'package:flutter_application_1/dataModels/Child.dart';
 class CurrentUser {
   String uid;
   bool is_coach = false;
-  String name;
+  String fname;
+  String lname;
   String adress;
   String phone;
   String email;
@@ -17,7 +18,8 @@ class CurrentUser {
   CurrentUser({
     this.uid,
     this.is_coach,
-    this.name,
+    this.fname,
+    this.lname,
     this.adress,
     this.phone,
     this.email,
@@ -28,7 +30,8 @@ class CurrentUser {
   CurrentUser copyWith({
     String uid,
     bool is_coach,
-    String name,
+    String fname,
+    String lname,
     String adress,
     String phone,
     String email,
@@ -38,7 +41,8 @@ class CurrentUser {
     return CurrentUser(
       uid: uid ?? this.uid,
       is_coach: is_coach ?? this.is_coach,
-      name: name ?? this.name,
+      fname: fname ?? this.fname,
+      lname: lname ?? this.lname,
       adress: adress ?? this.adress,
       phone: phone ?? this.phone,
       email: email ?? this.email,
@@ -50,7 +54,8 @@ class CurrentUser {
   void updateWith({@required CurrentUser updatedUserModel}) {
     this.uid = updatedUserModel.uid;
     this.is_coach = updatedUserModel.is_coach;
-    this.name = updatedUserModel.name;
+    this.fname = updatedUserModel.fname;
+    this.lname = updatedUserModel.lname;
     this.email = updatedUserModel.email;
     this.adress = updatedUserModel.adress;
     this.phone = updatedUserModel.phone;
@@ -62,7 +67,8 @@ class CurrentUser {
     return {
       'uid': uid,
       'is_coach': is_coach,
-      'name': name,
+      'fname': fname,
+      'lname': lname,
       'adress': adress,
       'phone': phone,
       'email': email,
@@ -77,7 +83,8 @@ class CurrentUser {
     return CurrentUser(
       uid: documentId,
       is_coach: map['is_coach'],
-      name: map['name'],
+      fname: map['fname'],
+      lname: map['lname'],
       adress: map['adress'],
       phone: map['phone'],
       email: map['email'],
@@ -93,7 +100,7 @@ class CurrentUser {
 
   @override
   String toString() {
-    return 'CurrentUser(uid: $uid, is_coach: $is_coach, name: $name, adress: $adress, phone: $phone, email: $email, about: $about, children: $children)';
+    return 'CurrentUser(uid: $uid, is_coach: $is_coach, fname: $fname, lname: $lname, adress: $adress, phone: $phone, email: $email, about: $about, children: $children)';
   }
 
   @override
@@ -103,7 +110,8 @@ class CurrentUser {
     return o is CurrentUser &&
         o.uid == uid &&
         o.is_coach == is_coach &&
-        o.name == name &&
+        o.fname == fname &&
+        o.lname == lname &&
         o.adress == adress &&
         o.phone == phone &&
         o.email == email &&
@@ -115,7 +123,8 @@ class CurrentUser {
   int get hashCode {
     return uid.hashCode ^
         is_coach.hashCode ^
-        name.hashCode ^
+        fname.hashCode ^
+        lname.hashCode ^
         adress.hashCode ^
         phone.hashCode ^
         email.hashCode ^
