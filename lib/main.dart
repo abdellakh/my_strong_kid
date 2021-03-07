@@ -2,10 +2,26 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/ParentProfil.dart';
+import 'package:flutter_application_1/providers/authProvider.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_application_1/Parent_Coach.dart';
 
+import 'services/firestore_database.dart';
+
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  //initialize firestore  before using any of firebase services
+  FirestoreDatabase database = FirestoreDatabase();
+  database.initDatabaseAccess();
+
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider<AuthProvider>(
+      create: (context) => AuthProvider(),
+    ),
+    Provider<FirestoreDatabase>(
+      create: (context) => FirestoreDatabase(),
+    ),
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

@@ -27,6 +27,23 @@ class PerformanceParent extends StatelessWidget {
             ),
           ),
           Transform.translate(
+            offset: Offset(0.0, 0.0),
+            child:
+                // Adobe XD layer: 'leslie-jones-urBiLD…' (shape)
+                Container(
+              width: 1344.0,
+              height: 896.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: const AssetImage('assets/images/coachProfile.jpg'),
+                  fit: BoxFit.fill,
+                  colorFilter: new ColorFilter.mode(
+                      Colors.black.withOpacity(0.21), BlendMode.dstIn),
+                ),
+              ),
+            ),
+          ),
+          Transform.translate(
             offset: Offset(128.0, 60.0),
             child: Text(
               'Performance',

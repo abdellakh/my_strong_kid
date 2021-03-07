@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/dataModels/CurrentUser.dart';
+import 'package:flutter_application_1/providers/authProvider.dart';
+import 'package:provider/provider.dart';
 import './Composant61.dart';
 import './Composant71.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -8,12 +11,32 @@ import './CreateAccount1.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 
-class CreateAccount2 extends StatelessWidget {
+class CreateAccount2 extends StatefulWidget {
+  CurrentUser user;
   CreateAccount2({
     Key key,
+    this.user,
   }) : super(key: key);
+
+  @override
+  _CreateAccount2State createState() => _CreateAccount2State();
+}
+
+class _CreateAccount2State extends State<CreateAccount2> {
+  TextEditingController _emailController;
+  TextEditingController _passwordController;
+  TextEditingController _repasswordController;
+
+  @override
+  void initState() {
+    _emailController = TextEditingController(text: "");
+    _passwordController = TextEditingController(text: "");
+    _repasswordController = TextEditingController(text: "");
+  }
+
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       body: Stack(
@@ -57,6 +80,7 @@ class CreateAccount2 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.mail),
                     title: TextField(
+                      controller: this._emailController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'EMAIL'),
                       style: TextStyle(
@@ -82,6 +106,8 @@ class CreateAccount2 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.lock_open_fill),
                     title: TextField(
+                      controller: this._passwordController,
+                      obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Password'),
                       style: TextStyle(
@@ -107,6 +133,8 @@ class CreateAccount2 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.lock_open_fill),
                     title: TextField(
+                      controller: this._repasswordController,
+                      obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Confirm Password'),
@@ -132,7 +160,16 @@ class CreateAccount2 extends StatelessWidget {
                 PageLinkInfo(
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => CreateAccount3(),
+                  pageBuilder: () {
+                    authProvider
+                        .registerWithEmailAndPassword(
+                            this._emailController.text,
+                            this._passwordController.text)
+                        .then((value) {
+                      widget.user.email = value.email;
+                    });
+                    return CreateAccount3(user: widget.user);
+                  },
                 ),
               ],
               child: SizedBox(

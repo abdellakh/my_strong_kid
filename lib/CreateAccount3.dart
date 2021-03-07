@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/dataModels/CurrentUser.dart';
+import 'package:provider/provider.dart';
 import './Composant71.dart';
 import './Composant61.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -8,12 +10,37 @@ import './FInish.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 
-class CreateAccount3 extends StatelessWidget {
-  CreateAccount3({
-    Key key,
-  }) : super(key: key);
+import 'dataModels/Child.dart';
+import 'services/firestore_database.dart';
+
+class CreateAccount3 extends StatefulWidget {
+  CurrentUser user;
+  CreateAccount3({Key key, this.user}) : super(key: key);
+
+  @override
+  _CreateAccount3State createState() => _CreateAccount3State();
+}
+
+class _CreateAccount3State extends State<CreateAccount3> {
+  TextEditingController child_fnameController;
+  TextEditingController child_lnameController;
+  TextEditingController child_ageController;
+  TextEditingController child_sexController;
+  TextEditingController child_sportController;
+
+  @override
+  void initState() {
+    child_fnameController = TextEditingController(text: "");
+    child_lnameController = TextEditingController(text: "");
+    child_ageController = TextEditingController(text: "");
+    child_sexController = TextEditingController(text: "");
+    child_sportController = TextEditingController(text: "");
+  }
+
   @override
   Widget build(BuildContext context) {
+    final firestoreDatabase =
+        Provider.of<FirestoreDatabase>(context, listen: false);
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       body: Stack(
@@ -75,7 +102,8 @@ class CreateAccount3 extends StatelessWidget {
                             transition: LinkTransition.Fade,
                             ease: Curves.easeOut,
                             duration: 0.3,
-                            pageBuilder: () => CreateAccount2(),
+                            pageBuilder: () =>
+                                CreateAccount2(user: widget.user),
                           ),
                         ],
                         child: Stack(
@@ -136,11 +164,27 @@ class CreateAccount3 extends StatelessWidget {
                         PageLink(
                       links: [
                         PageLinkInfo(
-                          transition: LinkTransition.Fade,
-                          ease: Curves.easeOut,
-                          duration: 0.3,
-                          pageBuilder: () => FInish(),
-                        ),
+                            transition: LinkTransition.Fade,
+                            ease: Curves.easeOut,
+                            duration: 0.3,
+                            pageBuilder: () {
+                              Child child = Child(
+                                fname: this.child_fnameController.text,
+                                lname: this.child_lnameController.text,
+                                age: int.parse(this.child_ageController.text),
+                                gender: this.child_sexController.text,
+                                sport: this.child_sportController.text,
+                              );
+
+                              firestoreDatabase
+                                  .createChild(child: child)
+                                  .then((child) {
+                                widget.user.children = [child];
+                                firestoreDatabase.createUser(user: widget.user);
+                              });
+
+                              return FInish();
+                            }),
                       ],
                       child: Stack(
                         children: <Widget>[
@@ -230,6 +274,7 @@ class CreateAccount3 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.person_fill),
                     title: TextField(
+                      controller: child_fnameController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'FirstName'),
                       style: TextStyle(
@@ -255,6 +300,7 @@ class CreateAccount3 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.person_fill),
                     title: TextField(
+                      controller: child_lnameController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Last Name'),
                       style: TextStyle(
@@ -280,6 +326,7 @@ class CreateAccount3 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.person_alt_circle_fill),
                     title: TextField(
+                      controller: child_ageController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Kid\s Age'),
                       style: TextStyle(
@@ -305,6 +352,7 @@ class CreateAccount3 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.person_crop_circle),
                     title: TextField(
+                      controller: child_sexController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Sex'),
                       style: TextStyle(
@@ -330,6 +378,7 @@ class CreateAccount3 extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.sportscourt),
                     title: TextField(
+                      controller: child_sportController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Sport'),
                       style: TextStyle(

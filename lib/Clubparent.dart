@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Activities.dart';
+import 'package:flutter_application_1/ActivitiesParent.dart';
+import 'package:flutter_application_1/ActivitiesParentS.dart';
 import 'package:flutter_application_1/Events.dart';
+import 'package:flutter_application_1/EventsParents.dart';
 import 'package:flutter_application_1/Martial.dart';
+import 'package:flutter_application_1/MartialParents.dart';
 import 'package:flutter_application_1/Whoarewe.dart';
+import 'package:flutter_application_1/WhoareweParents.dart';
 import './Home.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -82,7 +87,7 @@ class Clubparent extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => Whoarewe(),
+                  pageBuilder: () => WhoareweParent(),
                 ),
               ],
               child: SizedBox(
@@ -146,7 +151,7 @@ class Clubparent extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => Martial(),
+                  pageBuilder: () => MartialParent(),
                 ),
               ],
               child: SizedBox(
@@ -210,7 +215,7 @@ class Clubparent extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => Activities(),
+                  pageBuilder: () => ActivitiesParentS(),
                 ),
               ],
               child: SizedBox(
@@ -274,7 +279,7 @@ class Clubparent extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => Events(),
+                  pageBuilder: () => EventsParent(),
                 ),
               ],
               child: SizedBox(
