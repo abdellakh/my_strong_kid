@@ -2,10 +2,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/ParentProfil.dart';
+import 'package:flutter_application_1/providers/authProvider.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_application_1/Parent_Coach.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider<AuthProvider>(
+      create: (context) => AuthProvider(),
+    ),
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
