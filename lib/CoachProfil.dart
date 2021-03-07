@@ -25,7 +25,7 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(-454.0, 0.0),
+            offset: Offset(0.0, 0.0),
             child:
                 // Adobe XD layer: 'leslie-jones-urBiLD…' (shape)
                 Container(
@@ -33,8 +33,7 @@ class CoachProfil extends StatelessWidget {
               height: 896.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage(
-                      'assets/images/backgroundkidsplaning.jpg'),
+                  image: const AssetImage('assets/images/coachProfile.jpg'),
                   fit: BoxFit.fill,
                   colorFilter: new ColorFilter.mode(
                       Colors.black.withOpacity(0.21), BlendMode.dstIn),
@@ -43,16 +42,16 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(0.0, 377.0),
+            offset: Offset(17.0, 400.0),
             child: ClipRect(
               child: BackdropFilter(
-                filter: ui.ImageFilter.blur(sigmaX: 12.0, sigmaY: 12.0),
+                filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                 child: Container(
-                  width: 414.0,
-                  height: 403.0,
+                  width: 380.0,
+                  height: 306.0,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(73.0),
-                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(56.0),
+                    color: const Color(0x1affffff),
                     border:
                         Border.all(width: 1.0, color: const Color(0xff707070)),
                   ),
@@ -61,7 +60,7 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(33.2, 55.9),
+            offset: Offset(33.2, 60.0),
             child: PageLink(
               links: [
                 PageLinkInfo(
@@ -78,7 +77,7 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(124.0, 35.0),
+            offset: Offset(124.0, 60.0),
             child: Text(
               'Coach Profil',
               style: TextStyle(
@@ -91,12 +90,12 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(139.0, 197.0),
+            offset: Offset(115.0, 250.0),
             child: Text(
               'Coach name',
               style: TextStyle(
                 fontFamily: 'Gotham',
-                fontSize: 25,
+                fontSize: 30,
                 color: const Color(0xfffafafa),
                 fontWeight: FontWeight.w300,
               ),
@@ -104,55 +103,42 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(93.0, 235.0),
+            offset: Offset(93.0, 305.0),
             child: SizedBox(
               width: 49.0,
               height: 51.0,
               child: Stack(
                 children: <Widget>[
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 49.0, 51.0),
-                    size: Size(49.0, 51.0),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    pinBottom: true,
+                  Transform.translate(
+                    offset: Offset(0.0, 0.0),
                     child: ClipOval(
                       child: BackdropFilter(
-                        filter: ui.ImageFilter.blur(sigmaX: 47.0, sigmaY: 47.0),
+                        filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                         child: Container(
+                          width: 52.0,
+                          height: 52.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
-                            color: Colors.transparent,
+                            color: const Color(0xffA17EBB).withOpacity(.8),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(11.2, 10.2, 26.6, 32.0),
-                    size: Size(49.0, 51.0),
-                    fixedWidth: true,
-                    fixedHeight: true,
+                  Transform.translate(
+                    offset: Offset(0.0, 3.0),
                     child:
-                        // Adobe XD layer: 'noun_Phone_3530484' (group)
-                        Stack(
-                      children: <Widget>[
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(0.0, 0.0, 26.6, 32.0),
-                          size: Size(26.6, 32.0),
-                          pinLeft: true,
-                          pinRight: true,
-                          pinTop: true,
-                          pinBottom: true,
-                          child: SvgPicture.string(
-                            _svg_antp4l,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
+                        // Adobe XD layer: 'noun_Mail_1559570' (shape)
+                        Container(
+                      width: 48.0,
+                      height: 41.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: const AssetImage('assets/images/tel.png'),
+                          fit: BoxFit.fill,
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ],
@@ -160,27 +146,24 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(268.0, 235.0),
+            offset: Offset(268.0, 305.0),
             child: SizedBox(
-              width: 49.0,
+              width: 51.0,
               height: 51.0,
               child: Stack(
                 children: <Widget>[
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 49.0, 51.0),
-                    size: Size(49.0, 51.0),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    pinBottom: true,
+                  Transform.translate(
+                    offset: Offset(0.0, 0.0),
                     child: ClipOval(
                       child: BackdropFilter(
                         filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                         child: Container(
+                          width: 52.0,
+                          height: 52.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
-                            color: Colors.transparent,
+                            color: const Color(0xffA17EBB).withOpacity(.8),
                           ),
                         ),
                       ),
@@ -198,7 +181,7 @@ class CoachProfil extends StatelessWidget {
                         Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: const AssetImage(''),
+                          image: const AssetImage('assets/images/Mail.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -209,7 +192,7 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(97.0, 290.0),
+            offset: Offset(97.0, 365.0),
             child: Text(
               'Phone',
               style: TextStyle(
@@ -222,7 +205,7 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(270.0, 290.0),
+            offset: Offset(270.0, 365.0),
             child: Text(
               'E-Mail',
               style: TextStyle(
@@ -235,165 +218,169 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(17.0, 817.0),
-            child: PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => ParentProfil(),
-                ),
-              ],
-              child: SizedBox(
-                width: 380.0,
-                height: 62.0,
-                child: Stack(
-                  children: <Widget>[
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(106.0, 4.0, 56.0, 48.0),
-                      size: Size(380.0, 62.0),
-                      pinTop: true,
-                      fixedWidth: true,
-                      fixedHeight: true,
-                      child:
-                          // Adobe XD layer: 'noun_Home_3128906' (shape)
-                          PageLink(
-                        links: [
-                          PageLinkInfo(
-                            transition: LinkTransition.Fade,
-                            ease: Curves.easeOut,
-                            duration: 0.3,
-                            pageBuilder: () => Home(),
-                          ),
-                        ],
-                        child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: const AssetImage('assets/images/home.png'),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                        ),
+            offset: Offset(17.0, 750.0),
+            child: SizedBox(
+              width: 380.0,
+              height: 62.0,
+              child: Stack(
+                children: <Widget>[
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(0.0, 0.0, 380.0, 62.0),
+                    size: Size(380.0, 62.0),
+                    pinLeft: true,
+                    pinRight: true,
+                    pinTop: true,
+                    pinBottom: true,
+                    child: Container(
+                      width: 380.0,
+                      height: 463.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(26.0),
+                        color: const Color(0xffffffff).withOpacity(.3),
+                        border: Border.all(
+                            width: 1.0,
+                            color: const Color(0xff707070).withOpacity(.7)),
                       ),
                     ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(19.0, 8.0, 47.0, 40.0),
-                      size: Size(380.0, 62.0),
-                      pinLeft: true,
-                      pinTop: true,
-                      fixedWidth: true,
-                      fixedHeight: true,
-                      child:
-                          // Adobe XD layer: 'noun_notifications_…' (shape)
-                          Container(
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(106.0, 4.0, 56.0, 48.0),
+                    size: Size(380.0, 62.0),
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'noun_Home_3128906' (shape)
+                        PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => Home(),
+                        ),
+                      ],
+                      child: Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: const AssetImage('assets/images/notif.png'),
+                            image: const AssetImage('assets/images/home.png'),
                             fit: BoxFit.fill,
                           ),
                         ),
                       ),
                     ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(316.4, 10.0, 41.3, 41.5),
-                      size: Size(380.0, 62.0),
-                      pinRight: true,
-                      pinTop: true,
-                      fixedWidth: true,
-                      fixedHeight: true,
-                      child:
-                          // Adobe XD layer: 'noun_Home_3128906' (shape)
-                          PageLink(
-                        links: [
-                          PageLinkInfo(
-                            transition: LinkTransition.Fade,
-                            ease: Curves.easeOut,
-                            duration: 0.3,
-                            pageBuilder: () => ProfilCoachCoach(),
-                          ),
-                        ],
-                        child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: const AssetImage(
-                                  'assets/images/Profilrbar.png'),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(19.0, 8.0, 47.0, 40.0),
+                    size: Size(380.0, 62.0),
+                    pinLeft: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'noun_notifications_…' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: const AssetImage('assets/images/notif.png'),
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
-                    Pinned.fromSize(
-                      bounds: Rect.fromLTWH(210.7, 4.0, 62.6, 54.0),
-                      size: Size(380.0, 62.0),
-                      pinTop: true,
-                      pinBottom: true,
-                      fixedWidth: true,
-                      child:
-                          // Adobe XD layer: 'noun_messenger_3324…' (shape)
-                          Container(
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(316.4, 10.0, 41.3, 41.5),
+                    size: Size(380.0, 62.0),
+                    pinRight: true,
+                    pinTop: true,
+                    fixedWidth: true,
+                    fixedHeight: true,
+                    child:
+                        // Adobe XD layer: 'noun_Home_3128906' (shape)
+                        PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => ProfilCoachCoach(),
+                        ),
+                      ],
+                      child: Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image:
-                                const AssetImage('assets/images/messages.png'),
+                            image: const AssetImage(
+                                'assets/images/Profilrbar.png'),
                             fit: BoxFit.fill,
                           ),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Pinned.fromSize(
+                    bounds: Rect.fromLTWH(210.7, 4.0, 62.6, 54.0),
+                    size: Size(380.0, 62.0),
+                    pinTop: true,
+                    pinBottom: true,
+                    fixedWidth: true,
+                    child:
+                        // Adobe XD layer: 'noun_messenger_3324…' (shape)
+                        Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: const AssetImage('assets/images/messages.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
           Transform.translate(
-            offset: Offset(34.0, 414.0),
+            offset: Offset(63.0, 444.0),
             child: Text(
               'About',
               style: TextStyle(
                 fontFamily: 'Gotham',
                 fontSize: 25,
                 color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
+                fontWeight: FontWeight.w400,
               ),
               textAlign: TextAlign.left,
             ),
           ),
           Transform.translate(
-            offset: Offset(36.0, 456.0),
+            offset: Offset(65.0, 486.0),
             child: Container(
               width: 291.0,
               height: 2.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: const Color(0xff000000),
-                border: Border.all(width: 1.0, color: const Color(0xff000000)),
               ),
             ),
           ),
           Transform.translate(
-            offset: Offset(183.0, 236.0),
+            offset: Offset(183.0, 305.0),
             child: SizedBox(
-              width: 49.0,
+              width: 51.0,
               height: 51.0,
               child: Stack(
                 children: <Widget>[
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 0.0, 49.0, 51.0),
-                    size: Size(49.0, 51.0),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    pinBottom: true,
+                  Transform.translate(
+                    offset: Offset(0.0, 0.0),
                     child: ClipOval(
                       child: BackdropFilter(
-                        filter: ui.ImageFilter.blur(sigmaX: 47.0, sigmaY: 47.0),
+                        filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                         child: Container(
+                          width: 52.0,
+                          height: 52.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
-                            color: Colors.transparent,
+                            color: const Color(0xffA17EBB).withOpacity(.8),
                           ),
                         ),
                       ),
@@ -422,7 +409,7 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(178.0, 291.0),
+            offset: Offset(178.0, 365.0),
             child: Text(
               'Message',
               style: TextStyle(
@@ -435,7 +422,7 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(145.0, 87.0),
+            offset: Offset(145.0, 120.0),
             child: SizedBox(
               width: 125.0,
               height: 105.0,
@@ -457,19 +444,17 @@ class CoachProfil extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(38.6, 24.5, 47.7, 56.0),
-                    size: Size(125.0, 105.0),
-                    pinRight: true,
-                    pinTop: true,
-                    fixedWidth: true,
-                    fixedHeight: true,
-                    child:
-                        // Adobe XD layer: 'user' (shape)
-                        SvgPicture.string(
-                      _svg_s8llco,
-                      allowDrawingOutsideViewBox: true,
-                      fit: BoxFit.fill,
+                  Transform.translate(
+                    offset: Offset(25.0, 15.0),
+                    child: Container(
+                      width: 70.0,
+                      height: 70.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: const AssetImage('assets/images/PROFILE.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -477,9 +462,9 @@ class CoachProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(34.0, 482.5),
+            offset: Offset(63.0, 536.0),
             child: Text(
-              'I am someone who has experience\nI started training for 5 years in \ndifferent gyms ',
+              'I am someone who has \nexperience, i started training \nfor 5 years in different gyms ',
               style: TextStyle(
                 fontFamily: 'Gotham',
                 fontSize: 22,
