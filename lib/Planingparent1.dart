@@ -1,16 +1,45 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:adobe_xd/pinned.dart';
+import 'package:flutter_application_1/ChatParent.dart';
+import 'package:flutter_application_1/Home.dart';
 import 'package:flutter_application_1/KidsProfil.dart';
 import 'package:flutter_application_1/ParentProfil.dart';
 import './Composant226.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:adobe_xd/page_link.dart';
+import 'package:table_calendar/table_calendar.dart';
+import 'ChatCoach.dart';
+import 'HomeCoach.dart';
+import 'ProfilCoachCoach.dart';
 
-class Planingparent1 extends StatelessWidget {
+class Planingparent1 extends StatefulWidget {
   Planingparent1({
     Key key,
   }) : super(key: key);
+
+  @override
+  _Planingparent1State createState() => _Planingparent1State();
+}
+
+class _Planingparent1State extends State<Planingparent1> {
+  CalendarController _calendarController;
+  @override
+  void initState() {
+    super.initState();
+    _calendarController = CalendarController();
+  }
+
+  @override
+  void dispose() {
+    _calendarController.dispose();
+    super.dispose();
+  }
+
+  String dropdownValue = '10:00am';
+
+  String dropdownValue1 = '10:00am';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +54,7 @@ class Planingparent1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(-119.0, -1.0),
+            offset: Offset(0.0, 0.0),
             child:
                 // Adobe XD layer: 'anastase-maragos-I6…' (shape)
                 Container(
@@ -42,36 +71,11 @@ class Planingparent1 extends StatelessWidget {
               ),
             ),
           ),
-          Transform.translate(
-            offset: Offset(137.0, 60.0),
-            child: Text(
-              'Planning',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 27,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w700,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(33.0, 60.0),
-            child:
-                // Adobe XD layer: 'noun_Home_3128906' (shape)
-                PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => KidsProfil(),
-                ),
-              ],
-              child: SvgPicture.string(
-                _svg_biuix9,
-                allowDrawingOutsideViewBox: true,
-              ),
+          Container(
+            margin: EdgeInsets.all(70.0),
+            color: const Color(0xffffffff).withOpacity(.5),
+            child: TableCalendar(
+              calendarController: _calendarController,
             ),
           ),
           Transform.translate(
@@ -96,63 +100,118 @@ class Planingparent1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(56.0, 403.5),
-            child: Text(
-              '11st March',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 30,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w400,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(58.5, 451.5),
-            child: SvgPicture.string(
-              _svg_ux2wfi,
-              allowDrawingOutsideViewBox: true,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(61.0, 480.0),
-            child: Text(
-              '7:00pm ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 27,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(217.5, 479.5),
-            child: SvgPicture.string(
-              _svg_88eow8,
-              allowDrawingOutsideViewBox: true,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(248.0, 475.0),
-            child: Text(
-              'Trainig\nSession',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 27,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(9.5, 558.5),
-            child: SvgPicture.string(
-              _svg_f0q6k,
-              allowDrawingOutsideViewBox: true,
+            offset: Offset(0.0, 430.0),
+            child: ListView(
+              children: <Widget>[
+                ListTile(
+                  leading: Text(
+                    '7:00pm  |',
+                    style: TextStyle(fontSize: 25.0),
+                  ),
+                  title: Text(
+                    'Traing Session',
+                    style: TextStyle(fontSize: 25.0),
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  leading: DropdownButton<String>(
+                    value: dropdownValue,
+                    icon: Icon(CupertinoIcons.time),
+                    iconSize: 24,
+                    elevation: 16,
+                    onChanged: (String newValue) {
+                      setState(() {
+                        dropdownValue = newValue;
+                      });
+                    },
+                    items: <String>[
+                      '10:00am',
+                      '11:00am',
+                      '12:00pm',
+                      '1:00pm',
+                      '2:00pm',
+                      '3:00pm',
+                      '4:00pm',
+                      '5:00pm',
+                      '6:00pm',
+                      '7:00pm',
+                      '8:00pm',
+                      '9:00pm',
+                      '10:00pm',
+                      '11:00pm',
+                      '12:00am',
+                      '1:00am',
+                      '2:00am',
+                      '3:00am',
+                      '4:00am',
+                      '5:00am',
+                      '6:00am',
+                      '7:00am',
+                      '8:00am',
+                      '9:00am'
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(fontSize: 25.0),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  title: TextField(style: TextStyle(fontSize: 25.0)),
+                ),
+                Divider(),
+                ListTile(
+                  leading: DropdownButton<String>(
+                    value: dropdownValue1,
+                    icon: Icon(CupertinoIcons.time),
+                    iconSize: 24,
+                    elevation: 16,
+                    onChanged: (String newValue) {
+                      setState(() {
+                        dropdownValue1 = newValue;
+                      });
+                    },
+                    items: <String>[
+                      '10:00am',
+                      '11:00am',
+                      '12:00pm',
+                      '1:00pm',
+                      '2:00pm',
+                      '3:00pm',
+                      '4:00pm',
+                      '5:00pm',
+                      '6:00pm',
+                      '7:00pm',
+                      '8:00pm',
+                      '9:00pm',
+                      '10:00pm',
+                      '11:00pm',
+                      '12:00am',
+                      '1:00am',
+                      '2:00am',
+                      '3:00am',
+                      '4:00am',
+                      '5:00am',
+                      '6:00am',
+                      '7:00am',
+                      '8:00am',
+                      '9:00am'
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(fontSize: 25.0),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  title: TextField(style: TextStyle(fontSize: 25.0)),
+                ),
+              ],
             ),
           ),
           Transform.translate(
@@ -169,15 +228,19 @@ class Planingparent1 extends StatelessWidget {
                     pinRight: true,
                     pinTop: true,
                     pinBottom: true,
-                    child: Container(
-                      width: 380.0,
-                      height: 463.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(26.0),
-                        color: const Color(0xffffffff).withOpacity(.3),
-                        border: Border.all(
-                            width: 1.0,
-                            color: const Color(0xff707070).withOpacity(.7)),
+                    child: ClipRect(
+                      child: BackdropFilter(
+                        filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
+                        child: Container(
+                          width: 380.0,
+                          height: 443.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(56.0),
+                            color: const Color(0x1affffff),
+                            border: Border.all(
+                                width: 1.0, color: const Color(0xff707070)),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -189,11 +252,21 @@ class Planingparent1 extends StatelessWidget {
                     fixedHeight: true,
                     child:
                         // Adobe XD layer: 'noun_Home_3128906' (shape)
-                        Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: const AssetImage('assets/images/home.png'),
-                          fit: BoxFit.fill,
+                        PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => Home(),
+                        ),
+                      ],
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: const AssetImage('assets/images/home.png'),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                     ),
@@ -217,14 +290,14 @@ class Planingparent1 extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(316.4, 10.0, 41.3, 41.5),
+                    bounds: Rect.fromLTWH(316.4, 7.0, 41.3, 41.5),
                     size: Size(380.0, 62.0),
                     pinRight: true,
                     pinTop: true,
                     fixedWidth: true,
                     fixedHeight: true,
                     child:
-                        // Adobe XD layer: 'noun_Home_3128906' (shape)
+                        // Adobe XD layer: 'noun_messenger_3324…' (shape)
                         PageLink(
                       links: [
                         PageLinkInfo(
@@ -234,7 +307,9 @@ class Planingparent1 extends StatelessWidget {
                           pageBuilder: () => ParentProfil(),
                         ),
                       ],
-                      child: Container(
+                      child:
+                          // Adobe XD layer: 'noun_notifications_…' (shape)
+                          Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: const AssetImage(
@@ -253,11 +328,22 @@ class Planingparent1 extends StatelessWidget {
                     fixedWidth: true,
                     child:
                         // Adobe XD layer: 'noun_messenger_3324…' (shape)
-                        Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: const AssetImage('assets/images/messages.png'),
-                          fit: BoxFit.fill,
+                        PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => ChatParent(),
+                        ),
+                      ],
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                const AssetImage('assets/images/messages.png'),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                     ),
@@ -267,11 +353,22 @@ class Planingparent1 extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(-4.0, 113.5),
-            child: SizedBox(
-              width: 418.0,
-              height: 241.0,
-              child: Composant226(),
+            offset: Offset(33.0, 60.0),
+            child:
+                // Adobe XD layer: 'noun_Home_3128906' (shape)
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.Fade,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => KidsProfil(),
+                ),
+              ],
+              child: SvgPicture.string(
+                _svg_dejghm,
+                allowDrawingOutsideViewBox: true,
+              ),
             ),
           ),
         ],
@@ -288,3 +385,5 @@ const String _svg_88eow8 =
     '<svg viewBox="217.5 479.5 1.0 55.0" ><path transform="translate(217.5, 479.5)" d="M 0 0 L 0 55" fill="none" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
 const String _svg_f0q6k =
     '<svg viewBox="9.5 569.5 395.0 163.0" ><path transform="translate(9.5, 569.5)" d="M 0 0 L 395 1" fill="none" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /><path transform="translate(9.5, 650.5)" d="M 0 0 L 395 1" fill="none" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /><path transform="translate(9.5, 731.5)" d="M 0 0 L 395 1" fill="none" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_dejghm =
+    '<svg viewBox="33.2 55.9 27.4 31.1" ><path transform="matrix(-1.0, 0.0, 0.0, -1.0, 60.63, 86.95)" d="M 0 28.44038009643555 L 19.51089668273926 15.52555370330811 L 0 2.610516786575317 L 3.943859815597534 0 L 27.38809967041016 15.51867389678955 L 27.37767601013184 15.52557468414307 L 27.38809967041016 15.53247356414795 L 3.943859815597534 31.0509033203125 L 0 28.44038009643555 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';

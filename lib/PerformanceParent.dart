@@ -40,21 +40,6 @@ class PerformanceParent extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(326.2, 55.0),
-            child:
-                // Adobe XD layer: 'noun_Settings_36963…' (shape)
-                Container(
-              width: 40.0,
-              height: 40.0,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: const AssetImage('assets/images/engro.png'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ),
-          Transform.translate(
             offset: Offset(33.2, 60.0),
             child:
                 // Adobe XD layer: 'noun_Home_3128906' (shape)

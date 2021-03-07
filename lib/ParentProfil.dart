@@ -44,32 +44,28 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(-129.0, 0.0),
+            offset: Offset(0.0, 0.0),
             child: SizedBox(
               width: 600.0,
               height: 1396.0,
               child: SingleChildScrollView(
                 child: Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 20,
-                  runSpacing: 20,
                   children: [{}, {}].map((map) {
                     return Transform.translate(
-                      offset: Offset(36.0, 2.0),
+                      offset: Offset(0.0, 0.0),
                       child: SizedBox(
-                        width: 600.0,
-                        height: 899.0,
+                        width: 602.0,
+                        height: 902.0,
                         child: Stack(
                           children: <Widget>[
                             // Adobe XD layer: 'nathan-dumlao-xK68O…' (shape)
                             Container(
-                              width: 600.0,
-                              height: 899.0,
+                              width: 602.0,
+                              height: 902.0,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(71.0),
                                 image: DecorationImage(
                                   image: const AssetImage(
-                                      'assets/images/backgroundHome.jpg'),
+                                      'assets/images/backgroundHe.jpg'),
                                   fit: BoxFit.fill,
                                   colorFilter: new ColorFilter.mode(
                                       Colors.black.withOpacity(0.29),
@@ -87,22 +83,22 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(326.2, 40.5),
+            offset: Offset(326.2, 55.0),
             child:
                 // Adobe XD layer: 'noun_Settings_36963…' (shape)
                 Container(
-              width: 65.8,
-              height: 57.0,
+              width: 40.8,
+              height: 40.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage(''),
+                  image: const AssetImage('assets/images/engro.png'),
                   fit: BoxFit.fill,
                 ),
               ),
             ),
           ),
           Transform.translate(
-            offset: Offset(173.0, 51.0),
+            offset: Offset(173.0, 60.0),
             child: Text(
               'Profil',
               style: TextStyle(
@@ -115,29 +111,12 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(33.2, 55.9),
-            child: PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => Home(),
-                ),
-              ],
-              child: SvgPicture.string(
-                _svg_dejghm,
-                allowDrawingOutsideViewBox: true,
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(149.0, 270.0),
+            offset: Offset(135.0, 250.0),
             child: Text(
               'Your name',
               style: TextStyle(
                 fontFamily: 'Gotham',
-                fontSize: 25,
+                fontSize: 30,
                 color: const Color(0xfffafafa),
                 fontWeight: FontWeight.w300,
               ),
@@ -145,7 +124,7 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(121.0, 315.0),
+            offset: Offset(130.0, 315.0),
             child: SizedBox(
               width: 49.0,
               height: 51.0,
@@ -160,40 +139,32 @@ class ParentProfil extends StatelessWidget {
                     pinBottom: true,
                     child: ClipOval(
                       child: BackdropFilter(
-                        filter: ui.ImageFilter.blur(sigmaX: 47.0, sigmaY: 47.0),
+                        filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                         child: Container(
+                          width: 52.0,
+                          height: 52.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
-                            color: Colors.transparent,
+                            color: const Color(0xffffffff).withOpacity(.3),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(11.2, 10.2, 26.6, 32.0),
-                    size: Size(49.0, 51.0),
-                    fixedWidth: true,
-                    fixedHeight: true,
+                  Transform.translate(
+                    offset: Offset(0.0, 0.0),
                     child:
-                        // Adobe XD layer: 'noun_Phone_3530484' (group)
-                        Stack(
-                      children: <Widget>[
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(0.0, 0.0, 26.6, 32.0),
-                          size: Size(26.6, 32.0),
-                          pinLeft: true,
-                          pinRight: true,
-                          pinTop: true,
-                          pinBottom: true,
-                          child: SvgPicture.string(
-                            _svg_antp4l,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
+                        // Adobe XD layer: 'noun_Mail_1559570' (shape)
+                        Container(
+                      width: 48.0,
+                      height: 48.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: const AssetImage('assets/images/tel.png'),
+                          fit: BoxFit.fill,
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ],
@@ -201,7 +172,7 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(124.0, 374.0),
+            offset: Offset(133.0, 374.0),
             child: Text(
               'Phone',
               style: TextStyle(
@@ -231,28 +202,27 @@ class ParentProfil extends StatelessWidget {
                       child: BackdropFilter(
                         filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                         child: Container(
+                          width: 55.0,
+                          height: 55.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
-                            color: Colors.transparent,
+                            color: const Color(0xffffffff).withOpacity(.5),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Pinned.fromSize(
-                    bounds: Rect.fromLTWH(0.0, 5.0, 48.0, 41.0),
-                    size: Size(49.0, 51.0),
-                    pinLeft: true,
-                    pinRight: true,
-                    pinTop: true,
-                    pinBottom: true,
+                  Transform.translate(
+                    offset: Offset(1.0, 4.0),
                     child:
                         // Adobe XD layer: 'noun_Mail_1559570' (shape)
                         Container(
+                      width: 48.0,
+                      height: 41.0,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: const AssetImage(''),
+                          image: const AssetImage('assets/images/Mail.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -263,7 +233,7 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(249.0, 374.0),
+            offset: Offset(250.0, 374.0),
             child: Text(
               'E-Mail',
               style: TextStyle(
@@ -322,13 +292,6 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(20.5, 1089.5),
-            child: SvgPicture.string(
-              _svg_rorgwr,
-              allowDrawingOutsideViewBox: true,
-            ),
-          ),
-          Transform.translate(
             offset: Offset(47.0, 1127.0),
             child: Text(
               'Paiement statut',
@@ -355,7 +318,7 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(17.0, 817.0),
+            offset: Offset(17.0, 750.0),
             child: SizedBox(
               width: 380.0,
               height: 62.0,
@@ -368,10 +331,16 @@ class ParentProfil extends StatelessWidget {
                     pinRight: true,
                     pinTop: true,
                     pinBottom: true,
-                    child: SvgPicture.string(
-                      _svg_aegkjr,
-                      allowDrawingOutsideViewBox: true,
-                      fit: BoxFit.fill,
+                    child: Container(
+                      width: 380.0,
+                      height: 463.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(26.0),
+                        color: const Color(0xffffffff).withOpacity(.3),
+                        border: Border.all(
+                            width: 1.0,
+                            color: const Color(0xff707070).withOpacity(.7)),
+                      ),
                     ),
                   ),
                   Pinned.fromSize(
@@ -420,54 +389,32 @@ class ParentProfil extends StatelessWidget {
                     ),
                   ),
                   Pinned.fromSize(
-                    bounds: Rect.fromLTWH(316.4, 7.0, 41.3, 41.5),
+                    bounds: Rect.fromLTWH(316.4, 10.0, 41.3, 41.5),
                     size: Size(380.0, 62.0),
                     pinRight: true,
                     pinTop: true,
                     fixedWidth: true,
                     fixedHeight: true,
                     child:
-                        // Adobe XD layer: 'noun_profile_3696239' (group)
-                        Stack(
-                      children: <Widget>[
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(0.0, 0.0, 41.3, 35.2),
-                          size: Size(41.3, 41.5),
-                          pinLeft: true,
-                          pinRight: true,
-                          pinTop: true,
-                          pinBottom: true,
-                          child: SvgPicture.string(
-                            _svg_d3yaw3,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(13.8, 10.1, 13.6, 13.6),
-                          size: Size(41.3, 41.5),
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: SvgPicture.string(
-                            _svg_59u8jl,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(7.4, 25.6, 26.5, 15.9),
-                          size: Size(41.3, 41.5),
-                          pinLeft: true,
-                          pinRight: true,
-                          pinBottom: true,
-                          fixedHeight: true,
-                          child: SvgPicture.string(
-                            _svg_ihk46t,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          ),
+                        // Adobe XD layer: 'noun_Home_3128906' (shape)
+                        PageLink(
+                      links: [
+                        PageLinkInfo(
+                          transition: LinkTransition.Fade,
+                          ease: Curves.easeOut,
+                          duration: 0.3,
+                          pageBuilder: () => ParentProfil(),
                         ),
                       ],
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: const AssetImage(
+                                'assets/images/Profilrbar.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   Pinned.fromSize(
@@ -492,20 +439,6 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(270.0, 522.0),
-            child: Container(
-              width: 122.0,
-              height: 132.0,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: const AssetImage(''),
-                  fit: BoxFit.cover,
-                ),
-                border: Border.all(width: 1.0, color: const Color(0xff707070)),
-              ),
-            ),
-          ),
-          Transform.translate(
             offset: Offset(145.0, 125.0),
             child: Container(
               width: 125.0,
@@ -518,10 +451,16 @@ class ParentProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(183.1, 149.5),
-            child: SvgPicture.string(
-              _svg_jmtelm,
-              allowDrawingOutsideViewBox: true,
+            offset: Offset(174.0, 140.2),
+            child: Container(
+              width: 70.0,
+              height: 70.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: const AssetImage('assets/images/PROFILE.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
             ),
           ),
         ],

@@ -29,7 +29,7 @@ class KidsProfil extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(-465.0, 0.0),
+            offset: Offset(0.0, 0.0),
             child:
                 // Adobe XD layer: 'leslie-jones-urBiLD…' (shape)
                 Container(
@@ -37,8 +37,7 @@ class KidsProfil extends StatelessWidget {
               height: 896.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage(
-                      'assets/images/backgroundkidsplaning.jpg'),
+                  image: const AssetImage('assets/images/coachProfile.jpg'),
                   fit: BoxFit.fill,
                   colorFilter: new ColorFilter.mode(
                       Colors.black.withOpacity(0.21), BlendMode.dstIn),

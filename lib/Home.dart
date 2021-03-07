@@ -49,7 +49,7 @@ class Home extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(0.0, -3.0),
+            offset: Offset(0.0, 0.0),
             child:
                 // Adobe XD layer: 'nathan-dumlao-xK68O…' (shape)
                 Container(
@@ -57,7 +57,7 @@ class Home extends StatelessWidget {
               height: 902.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage('assets/images/backgroundHome.jpg'),
+                  image: const AssetImage('assets/images/backgroundHe.jpg'),
                   fit: BoxFit.fill,
                   colorFilter: new ColorFilter.mode(
                       Colors.black.withOpacity(0.29), BlendMode.dstIn),
