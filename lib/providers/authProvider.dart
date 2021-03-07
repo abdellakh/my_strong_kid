@@ -48,7 +48,7 @@ class AuthProvider extends ChangeNotifier {
       return null;
     }
     return CurrentUser(
-        uid: user.uid, email: user.email, name: user.displayName);
+        uid: user.uid, email: user.email, fname: user.displayName);
   }
 
   //Method to detect live auth changes such as user sign in and sign out
