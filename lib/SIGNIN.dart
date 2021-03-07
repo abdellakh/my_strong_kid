@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Home.dart';
+import 'package:flutter_application_1/providers/authProvider.dart';
+import 'package:provider/provider.dart';
 import './Composant71.dart';
 import './Home.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -8,12 +10,27 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 
-class SIGNIN extends StatelessWidget {
+class SIGNIN extends StatefulWidget {
   SIGNIN({
     Key key,
   }) : super(key: key);
+
+  @override
+  _SIGNINState createState() => _SIGNINState();
+}
+
+class _SIGNINState extends State<SIGNIN> {
+  TextEditingController _emailController;
+  TextEditingController _passwordController;
+  @override
+  void initState() {
+    _emailController = TextEditingController(text: "");
+    _passwordController = TextEditingController(text: "");
+  }
+
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       body: Stack(
@@ -40,8 +57,9 @@ class SIGNIN extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.person),
                     title: TextField(
+                      controller: _emailController,
                       decoration: InputDecoration(
-                          border: InputBorder.none, hintText: 'Username'),
+                          border: InputBorder.none, hintText: 'Email'),
                       style: TextStyle(
                         fontFamily: 'Gotham',
                         fontSize: 19,
@@ -65,6 +83,7 @@ class SIGNIN extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(CupertinoIcons.lock),
                     title: TextField(
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Password'),
@@ -181,11 +200,19 @@ class SIGNIN extends StatelessWidget {
             child: PageLink(
               links: [
                 PageLinkInfo(
-                  transition: LinkTransition.Fade,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => Home(),
-                ),
+                    transition: LinkTransition.Fade,
+                    ease: Curves.easeOut,
+                    duration: 0.3,
+                    pageBuilder: () {
+                      try {
+                        authProvider.signInWithEmailAndPassword(
+                            _emailController.text, _passwordController.text);
+                      } catch (err) {
+                        print(err);
+                      }
+
+                      return Home();
+                    }),
               ],
               child: SizedBox(
                 width: 146.0,

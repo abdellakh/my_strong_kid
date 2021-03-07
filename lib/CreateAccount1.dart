@@ -23,6 +23,13 @@ class _CreateAccount1State extends State<CreateAccount1> {
   TextEditingController _lnameController;
   TextEditingController _addressController;
   TextEditingController _phoneController;
+  @override
+  void initState() {
+    _fnameController = TextEditingController(text: "");
+    _lnameController = TextEditingController(text: "");
+    _addressController = TextEditingController(text: "");
+    _phoneController = TextEditingController(text: "");
+  }
 
   @override
   Widget build(BuildContext context) {

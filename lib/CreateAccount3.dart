@@ -29,6 +29,15 @@ class _CreateAccount3State extends State<CreateAccount3> {
   TextEditingController child_sportController;
 
   @override
+  void initState() {
+    child_fnameController = TextEditingController(text: "");
+    child_lnameController = TextEditingController(text: "");
+    child_ageController = TextEditingController(text: "");
+    child_sexController = TextEditingController(text: "");
+    child_sportController = TextEditingController(text: "");
+  }
+
+  @override
   Widget build(BuildContext context) {
     final firestoreDatabase =
         Provider.of<FirestoreDatabase>(context, listen: false);
@@ -158,7 +167,7 @@ class _CreateAccount3State extends State<CreateAccount3> {
                             transition: LinkTransition.Fade,
                             ease: Curves.easeOut,
                             duration: 0.3,
-                            pageBuilder: () async {
+                            pageBuilder: () {
                               Child child = Child(
                                 fname: this.child_fnameController.text,
                                 lname: this.child_lnameController.text,
@@ -167,13 +176,12 @@ class _CreateAccount3State extends State<CreateAccount3> {
                                 sport: this.child_sportController.text,
                               );
 
-                              child = await firestoreDatabase.createChild(
-                                  child: child);
-
-                              widget.user.children = [child];
-
-                              await firestoreDatabase.createUser(
-                                  user: widget.user);
+                              firestoreDatabase
+                                  .createChild(child: child)
+                                  .then((child) {
+                                widget.user.children = [child];
+                                firestoreDatabase.createUser(user: widget.user);
+                              });
 
                               return FInish();
                             }),

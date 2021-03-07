@@ -26,6 +26,14 @@ class _CreateAccount2State extends State<CreateAccount2> {
   TextEditingController _emailController;
   TextEditingController _passwordController;
   TextEditingController _repasswordController;
+
+  @override
+  void initState() {
+    _emailController = TextEditingController(text: "");
+    _passwordController = TextEditingController(text: "");
+    _repasswordController = TextEditingController(text: "");
+  }
+
   @override
   Widget build(BuildContext context) {
     final authProvider = Provider.of<AuthProvider>(context);
@@ -99,6 +107,7 @@ class _CreateAccount2State extends State<CreateAccount2> {
                     leading: Icon(CupertinoIcons.lock_open_fill),
                     title: TextField(
                       controller: this._passwordController,
+                      obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Password'),
                       style: TextStyle(
@@ -125,6 +134,7 @@ class _CreateAccount2State extends State<CreateAccount2> {
                     leading: Icon(CupertinoIcons.lock_open_fill),
                     title: TextField(
                       controller: this._repasswordController,
+                      obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Confirm Password'),
@@ -150,12 +160,14 @@ class _CreateAccount2State extends State<CreateAccount2> {
                 PageLinkInfo(
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () async {
-                    CurrentUser userModel =
-                        await authProvider.registerWithEmailAndPassword(
+                  pageBuilder: () {
+                    authProvider
+                        .registerWithEmailAndPassword(
                             this._emailController.text,
-                            this._passwordController.text);
-                    widget.user.email = userModel.email;
+                            this._passwordController.text)
+                        .then((value) {
+                      widget.user.email = value.email;
+                    });
                     return CreateAccount3(user: widget.user);
                   },
                 ),

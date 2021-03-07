@@ -9,6 +9,7 @@ import 'package:flutter_application_1/Parent_Coach.dart';
 import 'services/firestore_database.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   //initialize firestore  before using any of firebase services
   FirestoreDatabase database = FirestoreDatabase();
   database.initDatabaseAccess();

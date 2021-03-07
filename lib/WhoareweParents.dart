@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:adobe_xd/pinned.dart';
+import 'package:flutter_application_1/ChatParent.dart';
 import 'package:flutter_application_1/ClubCoach.dart';
+import 'package:flutter_application_1/Clubparent.dart';
+import 'package:flutter_application_1/Home.dart';
 import 'package:flutter_application_1/HomeCoach.dart';
-import 'package:flutter_application_1/KidsProfil.dart';
-
+import 'package:flutter_application_1/ParentProfil.dart';
+import 'package:flutter_application_1/PlaningCoach.dart';
+import 'package:flutter_application_1/PlayersCoach.dart';
 import 'package:flutter_application_1/ProfilCoachCoach.dart';
 import './ChatCoach.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 
-class ActivitiesParent extends StatelessWidget {
-  ActivitiesParent({
+class WhoareweParent extends StatelessWidget {
+  WhoareweParent({
     Key key,
   }) : super(key: key);
   @override
@@ -29,18 +33,19 @@ class ActivitiesParent extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(0.0, 0.0),
+            offset: Offset(0.0, -1.0),
             child:
-                // Adobe XD layer: 'leslie-jones-urBiLD…' (shape)
+                // Adobe XD layer: 'anastase-maragos-I6…' (shape)
                 Container(
-              width: 1344.0,
-              height: 896.0,
+              width: 598.0,
+              height: 897.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage('assets/images/coachProfile.jpg'),
+                  image: const AssetImage(
+                      'assets/images/backgroundplaningparent.jpg'),
                   fit: BoxFit.fill,
                   colorFilter: new ColorFilter.mode(
-                      Colors.black.withOpacity(0.21), BlendMode.dstIn),
+                      Colors.black.withOpacity(0.32), BlendMode.dstIn),
                 ),
               ),
             ),
@@ -52,22 +57,22 @@ class ActivitiesParent extends StatelessWidget {
                 PageLinkInfo(
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => KidsProfil(),
+                  pageBuilder: () => Clubparent(),
                 ),
               ],
               child: SvgPicture.string(
-                _svg_dejghm,
+                _svg_l0lvp6,
                 allowDrawingOutsideViewBox: true,
               ),
             ),
           ),
           Transform.translate(
-            offset: Offset(140.0, 220.0),
+            offset: Offset(110.0, 230.0),
             child: Text(
-              'Activities',
+              'Who are we ?',
               style: TextStyle(
                 fontFamily: 'Gotham',
-                fontSize: 32,
+                fontSize: 30,
                 color: const Color(0xff000000),
                 fontWeight: FontWeight.w500,
               ),
@@ -75,13 +80,13 @@ class ActivitiesParent extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(17.0, 340.0),
+            offset: Offset(17.0, 300.0),
             child: ClipRect(
               child: BackdropFilter(
                 filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
                 child: Container(
                   width: 380.0,
-                  height: 350.0,
+                  height: 400.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(56.0),
                     color: const Color(0x1affffff),
@@ -93,173 +98,12 @@ class ActivitiesParent extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(250.0, 370.0),
-            child: ClipRect(
-              child: BackdropFilter(
-                filter: ui.ImageFilter.blur(sigmaX: 50.0, sigmaY: 50.0),
-                child: Container(
-                  width: 2.0,
-                  height: 300.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(56.0),
-                    color: const Color(0x1affffff),
-                    border:
-                        Border.all(width: 1.0, color: const Color(0xff707070)),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(63.0, 300.0),
+            offset: Offset(63.0, 450.0),
             child: Text(
-              'Nom ',
+              'ma3ref manekteb ',
               style: TextStyle(
                 fontFamily: 'Gotham',
-                fontSize: 28,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(270.0, 300.0),
-            child: Text(
-              'Sport ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 28,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(63.0, 370.0),
-            child: Text(
-              'Activities 1 ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(280.0, 370.0),
-            child: Text(
-              'Judo ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(63.0, 435.0),
-            child: Text(
-              'Activities 2 ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(280.0, 435.0),
-            child: Text(
-              'Judo',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(63.0, 500.0),
-            child: Text(
-              'Activities 3 ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(280.0, 490.0),
-            child: Text(
-              'Kick\n Boxing ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(63.0, 565.0),
-            child: Text(
-              'Activities 4 ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(280.0, 565.0),
-            child: Text(
-              'Judo ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(63.0, 630.0),
-            child: Text(
-              'Activities 5 ',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(280.0, 620.0),
-            child: Text(
-              'Kick\n Boxing',
-              style: TextStyle(
-                fontFamily: 'Gotham',
-                fontSize: 25,
+                fontSize: 22,
                 color: const Color(0xff000000),
                 fontWeight: FontWeight.w300,
               ),
@@ -321,7 +165,7 @@ class ActivitiesParent extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => HomeCoach(),
+                          pageBuilder: () => Home(),
                         ),
                       ],
                       child:
@@ -369,7 +213,7 @@ class ActivitiesParent extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => ProfilCoachCoach(),
+                          pageBuilder: () => ParentProfil(),
                         ),
                       ],
                       child: Container(
@@ -397,7 +241,7 @@ class ActivitiesParent extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.easeOut,
                           duration: 0.3,
-                          pageBuilder: () => ChatCoach(),
+                          pageBuilder: () => ChatParent(),
                         ),
                       ],
                       child: Container(
@@ -421,5 +265,7 @@ class ActivitiesParent extends StatelessWidget {
   }
 }
 
-const String _svg_dejghm =
-    '<svg viewBox="33.2 55.9 27.4 31.1" ><path transform="matrix(-1.0, 0.0, 0.0, -1.0, 60.63, 86.95)" d="M 0 28.44038009643555 L 19.51089668273926 15.52555370330811 L 0 2.610516786575317 L 3.943859815597534 0 L 27.38809967041016 15.51867389678955 L 27.37767601013184 15.52557468414307 L 27.38809967041016 15.53247356414795 L 3.943859815597534 31.0509033203125 L 0 28.44038009643555 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_9zjiwt =
+    '<svg viewBox="32.5 39.9 27.4 31.1" ><path transform="matrix(-1.0, 0.0, 0.0, -1.0, 59.87, 70.95)" d="M 0 28.44038009643555 L 19.51089668273926 15.52555370330811 L 0 2.610516786575317 L 3.943859815597534 0 L 27.38809967041016 15.51867389678955 L 27.37767601013184 15.52557468414307 L 27.38809967041016 15.53247356414795 L 3.943859815597534 31.0509033203125 L 0 28.44038009643555 Z" fill="#ffffff" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
+const String _svg_l0lvp6 =
+    '<svg viewBox="39.2 55.9 27.4 31.1" ><path transform="matrix(-1.0, 0.0, 0.0, -1.0, 66.63, 86.95)" d="M 0 28.44038009643555 L 19.51089668273926 15.52555370330811 L 0 2.610516786575317 L 3.943859815597534 0 L 27.38809967041016 15.51867389678955 L 27.37767601013184 15.52557468414307 L 27.38809967041016 15.53247356414795 L 3.943859815597534 31.0509033203125 L 0 28.44038009643555 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';

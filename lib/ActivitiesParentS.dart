@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_application_1/ClubCoach.dart';
+import 'package:flutter_application_1/Clubparent.dart';
 import 'package:flutter_application_1/HomeCoach.dart';
 import 'package:flutter_application_1/KidsProfil.dart';
 
@@ -11,8 +12,8 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/cupertino.dart';
 
-class ActivitiesParent extends StatelessWidget {
-  ActivitiesParent({
+class ActivitiesParentS extends StatelessWidget {
+  ActivitiesParentS({
     Key key,
   }) : super(key: key);
   @override
@@ -29,35 +30,36 @@ class ActivitiesParent extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(0.0, 0.0),
-            child:
-                // Adobe XD layer: 'leslie-jones-urBiLD…' (shape)
-                Container(
-              width: 1344.0,
-              height: 896.0,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: const AssetImage('assets/images/coachProfile.jpg'),
-                  fit: BoxFit.fill,
-                  colorFilter: new ColorFilter.mode(
-                      Colors.black.withOpacity(0.21), BlendMode.dstIn),
-                ),
-              ),
-            ),
-          ),
-          Transform.translate(
             offset: Offset(32.5, 60.9),
             child: PageLink(
               links: [
                 PageLinkInfo(
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => KidsProfil(),
+                  pageBuilder: () => Clubparent(),
                 ),
               ],
               child: SvgPicture.string(
                 _svg_dejghm,
                 allowDrawingOutsideViewBox: true,
+              ),
+            ),
+          ),
+          Transform.translate(
+            offset: Offset(0.0, -1.0),
+            child:
+                // Adobe XD layer: 'anastase-maragos-I6…' (shape)
+                Container(
+              width: 598.0,
+              height: 897.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: const AssetImage(
+                      'assets/images/backgroundplaningparent.jpg'),
+                  fit: BoxFit.fill,
+                  colorFilter: new ColorFilter.mode(
+                      Colors.black.withOpacity(0.32), BlendMode.dstIn),
+                ),
               ),
             ),
           ),
